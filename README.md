@@ -1,4 +1,4 @@
-# cmsc424-falll2024
+# cmsc424-fall2024
 
 Class repository for CMSC 424, Fall 2024, University of Maryland. 
 
