@@ -126,7 +126,7 @@ This will start a server inside the Docker container, listening on port 8888. We
 
 ### Submit the assignment
 
-Submit the assignment through ELMS. Run the following query in PostgreSQL:
+Submit the assignment through ELMS. In the `university` database, run the following query in PostgreSQL:
 	```
 	select count(*) from student;
 	``` 
