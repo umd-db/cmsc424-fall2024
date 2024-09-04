@@ -1,4 +1,4 @@
-## Project 1: SQL Assignment, CMSC424, Spring 2023
+## Project 1: SQL Assignment, CMSC424, Fall 2024
 
 *The assignment is to be done by yourself.*
 
