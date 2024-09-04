@@ -20,7 +20,7 @@ Similar to Project0, you will build the container with `docker build -t "cmsc424
     docker exec -it project1 /bin/bash
 
 
-Alternately, if you are using your host machine to start the PostgreSQL server, follow the instructions mentioned in the [Project0 README](https://github.com/abadid/cmsc424-fall2024/tree/main/project0).
+Alternately, if you are using your host machine to start the PostgreSQL server, follow the instructions mentioned in the [Project0 README](https://github.com/umd-db/cmsc424-fall2024/tree/main/project0).
 
 
 If you run into any issues while creating, loading or accessing the database, please seek help from a TA.
