@@ -19,7 +19,7 @@ We will use GitHub to distribute the assignments, and other class materials. Our
 
 You don't need a GitHub account to clone the class repository. Simply install git (on Windows, http://gitforwindows.org/ is helpful) and then run:
 
-`git clone https://github.com/umd-db/cmsc424-falll2024.git`
+`git clone https://github.com/umd-db/cmsc424-fall2024.git`
 
 You can do `git pull` (from within the `cmsc424-fall2024` directory) to fetch the newly added material.
 
