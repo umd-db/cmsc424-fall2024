@@ -38,7 +38,7 @@ queries[2] = """
 ###    (ex. the number of most flights is shared by 20 people), list all such customers.
 ### Output: (rank, name, airlineid count)
 ### Order: rank, name
-### HINT: Use the RANK() function provided by PostgreSQL. 
+### HINT: You can use self join to rank customers based on the number of flights.
 queries[3] = """
 """
 
@@ -91,11 +91,16 @@ queries[7] = """
 """
 
 ### 8. Write a query to find customers that took the same flight (identified by flightid) on consecutive days.
-###    Return the name, flightid start and end date of the customers flights.
-###    The start date should be the first date of the sequence and the end date should be the last date of the sequence.
-###    If a customer took the same flight on multiple sequences of consecutive days, return all the sequences.
-### Output: customer_name, flightid, start_date, end_date
-### Order: by customer_name, flightid, start_date
+###    Return the name, flightid start date and end date of the customers flights.
+###    The start date should be the first date of the pair and the end date should be the second date of the pair.
+###    If a customer took the same flight over multiple pairs of consecutive days, return all such pair.
+###    For instance if 'John Doe' flew UA101 on 08/01/2024, 08/02/2024, 08/03/2024, 08/06/2024, and 08/07/2024,
+###    the output should be: 
+###    [(John Doe ', 'UA101 ', datetime.date(2016, 8, 1), datetime.date(2016, 8, 2)),
+###     (John Doe ', 'UA101 ', datetime.date(2016, 8, 2), datetime.date(2016, 8, 3)),
+###     (John Doe ', 'UA101 ', datetime.date(2016, 8, 6), datetime.date(2016, 8, 7))]
+### Output: name, flightid, start_date, end_date
+### Order: by name, flightid, start_date
 queries[8] = """
 """
 

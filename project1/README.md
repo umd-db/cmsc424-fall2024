@@ -58,7 +58,7 @@ be simpler ways to solve the questions.
 The queries that we want you to write can be found as comments in the `queries.py` file. Your answers (i.e., SQL queries) should be added to this same `queries.py` file. A simple query is provided for the first answer to show you how it works.
 You are also provided with a Python file `SQLTesting.py` for printing your answers. The `SQLTesting.py` file essentially compares the answers of your queries with the correct answers present in `answers.py`.
 
-- We recommend that you use `psql` to design your queries, and then paste the queries to the `queries.py` file, and confirm it works.
+- We recommend that you use `psql flights` to design your queries, and then paste the queries to the `queries.py` file, and confirm it works.
 
 - SQLTesting takes quite a few options: use `python SQLTesting.py -h` to see the options.
 
