@@ -54,6 +54,8 @@ Some of the queries require you to use string or date functions that were not in
 You don't have to use the "hints" if you don't want to; there might
 be simpler ways to solve the questions.
 
+This assignment is possible to complete using only the parts of SQL covered in the official reading for this class through chapter 3 of the textbook, plus those PostgreSQL specific functions we linked to above. You should not use other parts of SQL that are covered in later sections of the textbook or found in other PostgreSQL documentation. Although we do not plan on checking this requirement (so you will not lose points if you ignore this requirement), using other SQL will prevent you from mastering the SQL constructs that this assignment is supposed to cover and will prevent you from doing well on the midterm and final exams (the exam will also present restrictions on the SQL you are allowed to use and we will be enforcing those requirements).
+
 ### Testing and submitting using SQLTesting.py
 The queries that we want you to write can be found as comments in the `queries.py` file. Your answers (i.e., SQL queries) should be added to this same `queries.py` file. A simple query is provided for the first answer to show you how it works.
 You are also provided with a Python file `SQLTesting.py` for printing your answers. The `SQLTesting.py` file essentially compares the answers of your queries with the correct answers present in `answers.py`.
