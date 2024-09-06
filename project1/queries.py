@@ -16,8 +16,8 @@ order by city;
 ### Hint:  - See postgresql date operators that are linked to from the README, and the "like" operator (see Chapter 3.4.2). 
 ###        - Alternately, you can use a regex to match the condition imposed on the name.
 ###        - See postgresql date operators and string functions
-###        - You may want to use a self-join to avoid including the youngest customer.
-###        - When testing, write a query that includes all customers, then modify that to exclude the youngest.
+###        - You may want to use a self-join to avoid including the oldest customer.
+###        - When testing, write a query that includes all customers, then modify that to exclude the oldest.
 ### Order: by name
 ### Output columns: name
 queries[1] = """
