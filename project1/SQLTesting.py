@@ -99,7 +99,7 @@ conn = psycopg2.connect("dbname=flights user=root password=root")
 cur = conn.cursor()
 
 totalscore = 0
-for i in range(1, 11):
+for i in range(1, 12):
 	# If a query is specified by -q option, only do that one
 	if args.query is None or args.query == i:
 		try:
@@ -119,7 +119,10 @@ for i in range(1, 11):
 			# Compare with correctanswers[i]
 			cmp_res = compareAnswers(ans, correctanswers[i], i==10)
 			print ("-----> " + cmp_res[0])
-			totalscore += cmp_res[1]
+			if i != 11:
+				totalscore += cmp_res[1]
+			else:
+				print ("Optional query 11 not graded.")
 			if interactive:
 				input('Press enter to proceed')
 				os.system('clear')
