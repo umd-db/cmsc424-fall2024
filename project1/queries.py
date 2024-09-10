@@ -120,7 +120,7 @@ queries[9] = """
 ###     The loyalty of an airline to its hub is defined by the ratio of the number
 ###     of flights that fly in or out of the hub versus the total number of flights
 ###     operated by airline. 
-###     Output: (name, loyalty, rank)
+###     Output: (name, rank)
 ###     Order: rank, name
 ### Note: a) If two airlines tie, then they should both get the same rank, and the next rank should be skipped. 
 ### For example, if the top two airlines have the same ratio, then there should be no rank 2, e.g., 1, 1, 3 ...
