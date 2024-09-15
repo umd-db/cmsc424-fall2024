@@ -79,7 +79,7 @@ queries[5] = """
 ###       - The participation percentage is rounded to 2 decimals, as shown above
 ###       - You do not need to confirm that the flights actually occur by referencing the flewon table. This query is only concerned with
 ###         flights that exist in the flights table.
-###       - You must not leave out airports that have no UA flights (participation of 0)
+###       - You must not leave out airports that have no AA flights (participation of 0)
 queries[6] = """
 """
 
