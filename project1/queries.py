@@ -69,7 +69,7 @@ queries[5] = """
 
 ### 6. Write a query to find the percentage participation of American Airlines in each airport, relative to the other airlines.
 ### One instance of participation in an airport is defined as a flight (EX. AA150) having a source or dest of that airport.
-### If UA101 leaves OAK and arrives in DFW, that adds 1 to American's count for both OAK and DFW airports.
+### If AA101 leaves OAK and arrives in DFW, that adds 1 to American's count for both OAK and DFW airports.
 ### This means that if AA has 1 in DFW, UA has 1 in DFW, DL has 2 in DFW, and SW has 3 in DFW, the query returns:
 ###     airport 		                              | participation
 ###     General Edward Lawrence Logan International   | .14
@@ -106,7 +106,7 @@ queries[8] = """
 
 ### 9. A layover consists of set of two flights where the destination of the first flight is the same 
 ###    as the source of the second flight. Additionally, the arrival of the first flight must be before the
-###    departure of the first flight. 
+###    departure of the second flight. 
 ###    Write a query to find all pairs of flights belonging to the same airline that had a layover in IAD
 ###    between 1 and 4 hours in length (inclusive).
 ### Output columns: 1st flight id, 2nd flight id, source city, destination city, layover duration
