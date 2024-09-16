@@ -1,0 +1,10 @@
+import datetime
+from decimal import *
+
+correctanswers = ["" for i in range(0, 4)]
+
+correctanswers[1] = [('UA180 ',), ('SW179 ',), ('SW178 ',), ('SW177 ',), ('UA176 ',), ('SW175 ',), ('SW174 ',), ('SW173 ',), ('AA172 ',), ('SW171 ',), ('SW170 ',), ('SW169 ',), ('AA168 ',), ('AA167 ',), ('AA166 ',), ('SW165 ',), ('UA164 ',), ('SW163 ',), ('DL162 ',), ('SW161 ',), ('DL160 ',), ('SW159 ',), ('SW158 ',), ('SW157 ',), ('SW156 ',), ('SW155 ',), ('AA154 ',), ('UA153 ',), ('SW152 ',), ('AA151 ',), ('AA150 ',), ('SW149 ',), ('SW148 ',), ('DL147 ',), ('UA146 ',), ('SW145 ',), ('SW144 ',), ('UA143 ',), ('SW139 ',), ('SW142 ',), ('DL141 ',)]
+
+correctanswers[2] =  [('Dallas Fort Worth International                                                                     ', Decimal('0.38')), ('John F Kennedy International                                                                        ', Decimal('0.33')), ('Los Angeles International                                                                           ', Decimal('0.33')), ('Fort Lauderdale Hollywood International                                                             ', Decimal('0.22')), ('Hartsfield Jackson Atlanta International                                                            ', Decimal('0.14')), ('Washington Dulles International                                                                     ', Decimal('0.14')), ('Metropolitan Oakland International                                                                  ', Decimal('0.11')), ("Chicago O'Hare International                                                                        ", Decimal('0.00')), ('Denver International                                                                                ', Decimal('0.00')), ('General Edward Lawrence Logan International                                                         ', Decimal('0.00'))]
+
+correctanswers[3] = [('DL',), ('UA',)]
