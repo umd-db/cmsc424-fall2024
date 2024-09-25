@@ -44,8 +44,20 @@ If you run into any issues while creating, loading or accessing the database, pl
 
 - The -v flag will print out more information, including the correct and submitted answers etc.
 
-**Q1 (5pt)**. A flight has flown if the `flewon` table contains at least one entry with the same `flightid`. Write a query that uses an outer join to list all the flights that have never flown.
-Output Column: `flightid`. Order By: `flightid`.
+**Q1 (5pt)**.The following query lists, for each flight that exists in the flights table, the number of times that cust7 has taken that flight (with a value of 0 for all flights that cust7 never took).
+
+```
+SELECT flightid, <answer1>
+FROM <answer2>
+WHERE customerid = 'cust7' or customerid is null
+GROUP BY flightid
+ORDER BY flightid;
+```
+
+Your job is to fill in `<answer1>` and `<answer2>` under the following constraints:
+1. `<answer1>` cannot be a nested query! (i.e. you cannot have the words SELECT or FROM as part of this answer). 
+1. `<answer2>` consists of 6 words, of which two are OUTER JOIN, two are the two tables being joined, and the remaining two can only contain letters a-z (e.g. no punctuation marks or parentheses).
+
 
 **Q2 (5pt)**. Let's revisit query 6 from Project 1. Recall that query 6 asked you to write a query to find the percentage participation of American Airlines in each airport, relative to the other airlines.
 One instance of participation in an airport is defined as a flight (EX. AA101) having a source or dest of that airport.
@@ -83,7 +95,7 @@ Your query **must** keep the same FROM clause as the above query. However, you n
 
 You don't need to check if the airline has flown out of the airport, just check that it operates out of it. (i.e, you don't need to check the `flewon` table).
 
-You're given the following views. You don't need to include them in the `queries.py` file, but you need to create them manually if you want to test your query in `psql`. 
+You're given the following views. You don't need to create them, we have already populated them in the database.
 
 ```
 CREATE VIEW flights_airports AS

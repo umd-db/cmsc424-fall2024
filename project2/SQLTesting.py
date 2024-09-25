@@ -18,30 +18,6 @@ args = parser.parse_args()
 
 verbose = args.verbose
 
-drop_and_create_view = """
-drop view if exists flights_airports;
-
-drop view if exists flights_JFK;
-
-CREATE VIEW flights_airports AS
- 	(SELECT flights.airlineid,
-    	flights.flightid,
-    	flights.source AS airportid
-   		FROM flights
-	UNION ALL
- 	SELECT flights.airlineid,
-    	flights.flightid,
-    	flights.dest AS airportid
-   		FROM flights
-);
-
-CREATE VIEW flights_JFK as 
-	(SELECT flights.flightid
-   		FROM flights
-  	WHERE flights.source = 'JFK' OR flights.dest = 'JFK'
-);
-"""
-
 # Check if x and y are almost near match
 def match(x, y):
 	print(x == y)
@@ -103,13 +79,20 @@ for i in [1,2,3]:
 	# If a query is specified by -q option, only do that one
 	if args.query is None or args.query == i:
 		try:
+			q = queries[i]
+			if i == 1:
+				q = """
+				SELECT flightid, {0} 
+				FROM {1} 
+				WHERE customerid = 'cust7' or customerid is null
+				GROUP BY flightid
+				ORDER BY flightid;
+				""".format(queries[i][0], queries[i][1])
+				
 			print ("========== Executing Query {}".format(i))
-			print (queries[i])
+			print (q)
 
-			if i == 3:
-				cur.execute(drop_and_create_view)
-
-			cur.execute(queries[i])
+			cur.execute(q)
 			ans = cur.fetchall()
 
 			if i == 3:

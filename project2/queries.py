@@ -5,9 +5,11 @@ select 0;
 """
 
 ### 1.
-queries[1] = """
-select 0;
-"""
+queries[1] = ["", ""]
+### <answer1>
+queries[1][0] = ""
+### <answer2>
+queries[1][1] = ""
 
 
 ### 2.

@@ -1035,4 +1035,25 @@ insert into flewon values ('UA101', 'cust53', to_date('2016-08-07', 'YYYY-MM-DD'
 insert into flewon values ('SW122', 'cust92', to_date('2016-08-05', 'YYYY-MM-DD'));
 insert into flewon values ('UA135', 'cust67', to_date('2016-08-08', 'YYYY-MM-DD'));
 insert into flewon values ('UA101', 'cust26', to_date('2016-08-04', 'YYYY-MM-DD'));
-	
+
+DROP VIEW IF EXISTS flights_airports;
+
+DROP VIEW IF EXISTS flights_JFK;
+
+CREATE VIEW flights_airports AS
+ 	(SELECT flights.airlineid,
+    	flights.flightid,
+    	flights.source AS airportid
+   		FROM flights
+	UNION ALL
+ 	SELECT flights.airlineid,
+    	flights.flightid,
+    	flights.dest AS airportid
+   		FROM flights
+);
+
+CREATE VIEW flights_JFK as 
+	(SELECT flights.flightid
+   		FROM flights
+  	WHERE flights.source = 'JFK' OR flights.dest = 'JFK'
+);
