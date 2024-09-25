@@ -1,0 +1,10 @@
+import datetime
+from decimal import *
+
+correctanswers = ["" for i in range(0, 4)]
+
+correctanswers[1] = [('AA115 ', 1), ('AA150 ', 0), ('AA151 ', 0), ('AA154 ', 0), ('AA166 ', 0), ('AA167 ', 0), ('AA168 ', 0), ('AA172 ', 0), ('DL141 ', 0), ('DL147 ', 0), ('DL160 ', 0), ('DL162 ', 0), ('SW102 ', 1), ('SW106 ', 1), ('SW110 ', 1), ('SW125 ', 1), ('SW139 ', 0), ('SW142 ', 0), ('SW144 ', 0), ('SW145 ', 0), ('SW148 ', 0), ('SW149 ', 0), ('SW152 ', 0), ('SW155 ', 0), ('SW156 ', 0), ('SW157 ', 0), ('SW158 ', 0), ('SW159 ', 0), ('SW161 ', 0), ('SW163 ', 0), ('SW165 ', 0), ('SW169 ', 0), ('SW170 ', 0), ('SW171 ', 0), ('SW173 ', 0), ('SW174 ', 0), ('SW175 ', 0), ('SW177 ', 0), ('SW178 ', 0), ('SW179 ', 0), ('UA101 ', 4), ('UA143 ', 0), ('UA146 ', 0), ('UA153 ', 0), ('UA164 ', 0), ('UA176 ', 0), ('UA180 ', 0)]
+
+correctanswers[2] =  [('Dallas Fort Worth International                                                                     ', Decimal('0.38')), ('John F Kennedy International                                                                        ', Decimal('0.33')), ('Los Angeles International                                                                           ', Decimal('0.33')), ('Fort Lauderdale Hollywood International                                                             ', Decimal('0.22')), ('Hartsfield Jackson Atlanta International                                                            ', Decimal('0.14')), ('Washington Dulles International                                                                     ', Decimal('0.14')), ('Metropolitan Oakland International                                                                  ', Decimal('0.11')), ("Chicago O'Hare International                                                                        ", Decimal('0.00')), ('Denver International                                                                                ', Decimal('0.00')), ('General Edward Lawrence Logan International                                                         ', Decimal('0.00'))]
+
+correctanswers[3] = [('DL',), ('UA',)]
