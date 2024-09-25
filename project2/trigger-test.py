@@ -159,7 +159,7 @@ cur.execute("UPDATE flewon set flightid = 'SW132' where customerid = 'cust4' and
 
 printAll("After the update cust4 has flown recent on UA than AA.")
 
-print("Inserting ('UA101', 'cust4', to_date('2016-08-01', 'YYYY-MM-DD') into flewon")
+print("Inserting ('UA101', 'cust4', to_date('2016-08-01', 'YYYY-MM-DD')) into flewon")
 cur.execute("INSERT into flewon values ('UA101', 'cust4', to_date('2016-08-01', 'YYYY-MM-DD'))")
 
 printAll("After the insert UA is still the most recent flight.")

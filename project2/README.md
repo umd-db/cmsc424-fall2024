@@ -12,6 +12,7 @@ Please do a `git pull` to download the directory `project2`. The files are:
 1. trigger-database.sql: SQL script for setting up the `flighttrigger` database.
 1. trigger.sql: The file where you will add the code for the trigger; this file has to be submitted.
 1. trigger-test.py: Python script for testing the trigger -- see below.
+1. trigger-results.txt: The expected results of the trigger -- see below.
 1. Dockerfile: A dockerfile that creates a container with the required databases and populates some of them.
 
 ### Getting started
@@ -309,7 +310,7 @@ Note: We did not update Anthony's `frequentflieron` airline.  This may not alway
 
 Switch to the `flighttrigger` database (i.e. exit out of the flights database and run `psql flighttrigger`). Execute `\i trigger-database.sql` The trigger code should be submitted in `trigger.sql` file. Running `psql -f trigger.sql flighttrigger` should generate the trigger without errors.
 
-You may also use `trigger-test.py`, in which case you do not need to execute `psql -f trigger.sql flighttrigger` (it is included in the script). You can run the test script as `python trigger-test.py`. A few transactions to the `customers`, `newcustomers`, `ffairlines` and `flewon` table are provided. You are free to add more transactions for purposes of testing your trigger code. Please note that this script does not validate your results; instead it prints out the state of the tables. You are responsible for validating the output against the expected state. 
+You may also use `trigger-test.py`, in which case you do not need to execute `psql -f trigger.sql flighttrigger` (it is included in the script). You can run the test script as `python trigger-test.py`. A few transactions to the `customers`, `newcustomers`, `ffairlines` and `flewon` table are provided. Additionally, the `trigger-results.txt` file contains the expected output of `trigger-test.py`. You are free to add more transactions for purposes of testing your trigger code. Please note that this script does not validate your results; instead it prints out the state of the tables. You are responsible for validating the output against the expected state. 
 
 The simplest way to reset the database is to:
 ```

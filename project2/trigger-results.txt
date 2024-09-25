@@ -1,0 +1,707 @@
+DROP TABLE
+DROP TABLE
+DROP TABLE
+DROP TABLE
+DROP TABLE
+DROP TABLE
+DROP TABLE
+CREATE TABLE
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+CREATE TABLE
+INSERT 0 4
+CREATE TABLE
+INSERT 0 4
+CREATE FUNCTION
+CREATE TRIGGER
+CREATE FUNCTION
+CREATE TRIGGER
+CREATE FUNCTION
+CREATE TRIGGER
+CREATE FUNCTION
+CREATE TRIGGER
+------------------- OPERATIONS ON CUSTOMERS -------------------
+Initial state
+
+CUSTOMERS
+-------  -----------------  ----------  --
+cust0    Anthony Allen      1985-05-14  AA
+cust15   Betty Gonzalez     1993-12-28  SW
+cust33   Christopher Davis  1984-05-13  DL
+cust109  James Adams        1994-05-22  AA
+-------  -----------------  ----------  --
+
+NEWCUSTOMERS
+-------  -----------------  ----------
+cust0    Anthony Allen      1985-05-14
+cust15   Betty Gonzalez     1993-12-28
+cust33   Christopher Davis  1984-05-13
+cust109  James Adams        1994-05-22
+-------  -----------------  ----------
+
+FFAIRLINES
+-------  --  ---
+cust15   SW  827
+cust33   DL  524
+cust0    AA   82
+cust109  AA   59
+-------  --  ---
+
+Inserting ('cust4', 'Anthony Gonzalez', to_date('1977-10-06', 'yyyy-mm-dd'), 'AA') into customers table
+After inserting cust4. customer should be present in all tables
+
+CUSTOMERS
+-------  -----------------  ----------  --
+cust0    Anthony Allen      1985-05-14  AA
+cust15   Betty Gonzalez     1993-12-28  SW
+cust33   Christopher Davis  1984-05-13  DL
+cust109  James Adams        1994-05-22  AA
+cust4    Anthony Gonzalez   1977-10-06  AA
+-------  -----------------  ----------  --
+
+NEWCUSTOMERS
+-------  -----------------  ----------
+cust0    Anthony Allen      1985-05-14
+cust15   Betty Gonzalez     1993-12-28
+cust33   Christopher Davis  1984-05-13
+cust109  James Adams        1994-05-22
+cust4    Anthony Gonzalez   1977-10-06
+-------  -----------------  ----------
+
+FFAIRLINES
+-------  --  ---
+cust15   SW  827
+cust33   DL  524
+cust0    AA   82
+cust109  AA   59
+cust4    AA    0
+-------  --  ---
+
+Now deleting cust4
+After deletion. cust4 should not be in any table
+
+CUSTOMERS
+-------  -----------------  ----------  --
+cust0    Anthony Allen      1985-05-14  AA
+cust15   Betty Gonzalez     1993-12-28  SW
+cust33   Christopher Davis  1984-05-13  DL
+cust109  James Adams        1994-05-22  AA
+-------  -----------------  ----------  --
+
+NEWCUSTOMERS
+-------  -----------------  ----------
+cust0    Anthony Allen      1985-05-14
+cust15   Betty Gonzalez     1993-12-28
+cust33   Christopher Davis  1984-05-13
+cust109  James Adams        1994-05-22
+-------  -----------------  ----------
+
+FFAIRLINES
+-------  --  ---
+cust15   SW  827
+cust33   DL  524
+cust0    AA   82
+cust109  AA   59
+-------  --  ---
+
+Inserting ('cust4', 'Anthony Gonzalez', to_date('1977-10-06', 'yyyy-mm-dd'), NULL) into customers table
+After inserting cust4. Should be present in customers and newcustomers but not ffairlines
+
+CUSTOMERS
+-------  -----------------  ----------  --
+cust0    Anthony Allen      1985-05-14  AA
+cust15   Betty Gonzalez     1993-12-28  SW
+cust33   Christopher Davis  1984-05-13  DL
+cust109  James Adams        1994-05-22  AA
+cust4    Anthony Gonzalez   1977-10-06
+-------  -----------------  ----------  --
+
+NEWCUSTOMERS
+-------  -----------------  ----------
+cust0    Anthony Allen      1985-05-14
+cust15   Betty Gonzalez     1993-12-28
+cust33   Christopher Davis  1984-05-13
+cust109  James Adams        1994-05-22
+cust4    Anthony Gonzalez   1977-10-06
+-------  -----------------  ----------
+
+FFAIRLINES
+-------  --  ---
+cust15   SW  827
+cust33   DL  524
+cust0    AA   82
+cust109  AA   59
+-------  --  ---
+
+Updating cust4's name to 'Tony Gonzalez' in customers table
+After updating name.  Update should be seen in both customer tables
+
+CUSTOMERS
+-------  -----------------  ----------  --
+cust0    Anthony Allen      1985-05-14  AA
+cust15   Betty Gonzalez     1993-12-28  SW
+cust33   Christopher Davis  1984-05-13  DL
+cust109  James Adams        1994-05-22  AA
+cust4    Tony Gonzalez      1977-10-06
+-------  -----------------  ----------  --
+
+NEWCUSTOMERS
+-------  -----------------  ----------
+cust0    Anthony Allen      1985-05-14
+cust15   Betty Gonzalez     1993-12-28
+cust33   Christopher Davis  1984-05-13
+cust109  James Adams        1994-05-22
+cust4    Tony Gonzalez      1977-10-06
+-------  -----------------  ----------
+
+FFAIRLINES
+-------  --  ---
+cust15   SW  827
+cust33   DL  524
+cust0    AA   82
+cust109  AA   59
+-------  --  ---
+
+Updating cust4's frequentflieron to DL in customers table
+After update of frequentflieron to DL for cust4. The frequentflieron column for cust4 in customers table should be DL
+
+CUSTOMERS
+-------  -----------------  ----------  --
+cust0    Anthony Allen      1985-05-14  AA
+cust15   Betty Gonzalez     1993-12-28  SW
+cust33   Christopher Davis  1984-05-13  DL
+cust109  James Adams        1994-05-22  AA
+cust4    Tony Gonzalez      1977-10-06  DL
+-------  -----------------  ----------  --
+
+NEWCUSTOMERS
+-------  -----------------  ----------
+cust0    Anthony Allen      1985-05-14
+cust15   Betty Gonzalez     1993-12-28
+cust33   Christopher Davis  1984-05-13
+cust109  James Adams        1994-05-22
+cust4    Tony Gonzalez      1977-10-06
+-------  -----------------  ----------
+
+FFAIRLINES
+-------  --  ---
+cust15   SW  827
+cust33   DL  524
+cust0    AA   82
+cust109  AA   59
+cust4    DL    0
+-------  --  ---
+
+Updating cust4's frequentflieron to NULL in customers table
+After updating frequentflieron to null. This should delete all entries for cust4 in ffairlines
+
+CUSTOMERS
+-------  -----------------  ----------  --
+cust0    Anthony Allen      1985-05-14  AA
+cust15   Betty Gonzalez     1993-12-28  SW
+cust33   Christopher Davis  1984-05-13  DL
+cust109  James Adams        1994-05-22  AA
+cust4    Tony Gonzalez      1977-10-06
+-------  -----------------  ----------  --
+
+NEWCUSTOMERS
+-------  -----------------  ----------
+cust0    Anthony Allen      1985-05-14
+cust15   Betty Gonzalez     1993-12-28
+cust33   Christopher Davis  1984-05-13
+cust109  James Adams        1994-05-22
+cust4    Tony Gonzalez      1977-10-06
+-------  -----------------  ----------
+
+FFAIRLINES
+-------  --  ---
+cust15   SW  827
+cust33   DL  524
+cust0    AA   82
+cust109  AA   59
+-------  --  ---
+
+Now deleting cust4
+After deletion.  Again cust4 should not appear in any tables
+
+CUSTOMERS
+-------  -----------------  ----------  --
+cust0    Anthony Allen      1985-05-14  AA
+cust15   Betty Gonzalez     1993-12-28  SW
+cust33   Christopher Davis  1984-05-13  DL
+cust109  James Adams        1994-05-22  AA
+-------  -----------------  ----------  --
+
+NEWCUSTOMERS
+-------  -----------------  ----------
+cust0    Anthony Allen      1985-05-14
+cust15   Betty Gonzalez     1993-12-28
+cust33   Christopher Davis  1984-05-13
+cust109  James Adams        1994-05-22
+-------  -----------------  ----------
+
+FFAIRLINES
+-------  --  ---
+cust15   SW  827
+cust33   DL  524
+cust0    AA   82
+cust109  AA   59
+-------  --  ---
+
+------------------- CONTINUING WITH OPERATIONS ON NEWCUSTOMERS -------------------
+Now deleting cust15
+After deletion, cust15 should not appear in any table
+
+CUSTOMERS
+-------  -----------------  ----------  --
+cust0    Anthony Allen      1985-05-14  AA
+cust33   Christopher Davis  1984-05-13  DL
+cust109  James Adams        1994-05-22  AA
+-------  -----------------  ----------  --
+
+NEWCUSTOMERS
+-------  -----------------  ----------
+cust0    Anthony Allen      1985-05-14
+cust33   Christopher Davis  1984-05-13
+cust109  James Adams        1994-05-22
+-------  -----------------  ----------
+
+FFAIRLINES
+-------  --  ---
+cust33   DL  524
+cust0    AA   82
+cust109  AA   59
+-------  --  ---
+
+Inserting ('cust4', 'Anthony Gonzalez', to_date('1977-10-06', 'yyyy-mm-dd')) into newcustomers table
+After inserting cust4, should be in both customer tables but not ffairlines
+
+CUSTOMERS
+-------  -----------------  ----------  --
+cust0    Anthony Allen      1985-05-14  AA
+cust33   Christopher Davis  1984-05-13  DL
+cust109  James Adams        1994-05-22  AA
+cust4    Anthony Gonzalez   1977-10-06
+-------  -----------------  ----------  --
+
+NEWCUSTOMERS
+-------  -----------------  ----------
+cust0    Anthony Allen      1985-05-14
+cust33   Christopher Davis  1984-05-13
+cust109  James Adams        1994-05-22
+cust4    Anthony Gonzalez   1977-10-06
+-------  -----------------  ----------
+
+FFAIRLINES
+-------  --  ---
+cust33   DL  524
+cust0    AA   82
+cust109  AA   59
+-------  --  ---
+
+Updating cust4's name to 'Tony Gonzalez' in newcustomers table
+After updating name, Update should appear in both customer tables
+
+CUSTOMERS
+-------  -----------------  ----------  --
+cust0    Anthony Allen      1985-05-14  AA
+cust33   Christopher Davis  1984-05-13  DL
+cust109  James Adams        1994-05-22  AA
+cust4    Tony Gonzalez      1977-10-06
+-------  -----------------  ----------  --
+
+NEWCUSTOMERS
+-------  -----------------  ----------
+cust0    Anthony Allen      1985-05-14
+cust33   Christopher Davis  1984-05-13
+cust109  James Adams        1994-05-22
+cust4    Tony Gonzalez      1977-10-06
+-------  -----------------  ----------
+
+FFAIRLINES
+-------  --  ---
+cust33   DL  524
+cust0    AA   82
+cust109  AA   59
+-------  --  ---
+
+------------------- CONTINUING WITH OPERATIONS ON FFAIRLINES -------------------
+Adding cust4's flights to flewon table and subsequently adding ffairline as AA
+After setting cust4 ff airline as AA. frequentflieron in customer should also be AA
+
+CUSTOMERS
+-------  -----------------  ----------  --
+cust0    Anthony Allen      1985-05-14  AA
+cust33   Christopher Davis  1984-05-13  DL
+cust109  James Adams        1994-05-22  AA
+cust4    Tony Gonzalez      1977-10-06  AA
+-------  -----------------  ----------  --
+
+NEWCUSTOMERS
+-------  -----------------  ----------
+cust0    Anthony Allen      1985-05-14
+cust33   Christopher Davis  1984-05-13
+cust109  James Adams        1994-05-22
+cust4    Tony Gonzalez      1977-10-06
+-------  -----------------  ----------
+
+FFAIRLINES
+-------  --  ---
+cust33   DL  524
+cust0    AA   82
+cust109  AA   59
+cust4    AA  175
+-------  --  ---
+
+Updating AA to be SW instead for cust4 in ffairlines
+After updating AA to SW as ff airline.  SW should now be the frequentflieron for cust4
+
+CUSTOMERS
+-------  -----------------  ----------  --
+cust0    Anthony Allen      1985-05-14  AA
+cust33   Christopher Davis  1984-05-13  DL
+cust109  James Adams        1994-05-22  AA
+cust4    Tony Gonzalez      1977-10-06  SW
+-------  -----------------  ----------  --
+
+NEWCUSTOMERS
+-------  -----------------  ----------
+cust0    Anthony Allen      1985-05-14
+cust33   Christopher Davis  1984-05-13
+cust109  James Adams        1994-05-22
+cust4    Tony Gonzalez      1977-10-06
+-------  -----------------  ----------
+
+FFAIRLINES
+-------  --  ----
+cust33   DL   524
+cust0    AA    82
+cust109  AA    59
+cust4    SW  1148
+-------  --  ----
+
+With AA and SW as ffairlines for cust4,  frequentflieron for cust4 should be 'AA' because of the most recent flightdate
+
+CUSTOMERS
+-------  -----------------  ----------  --
+cust0    Anthony Allen      1985-05-14  AA
+cust33   Christopher Davis  1984-05-13  DL
+cust109  James Adams        1994-05-22  AA
+cust4    Tony Gonzalez      1977-10-06  AA
+-------  -----------------  ----------  --
+
+NEWCUSTOMERS
+-------  -----------------  ----------
+cust0    Anthony Allen      1985-05-14
+cust33   Christopher Davis  1984-05-13
+cust109  James Adams        1994-05-22
+cust4    Tony Gonzalez      1977-10-06
+-------  -----------------  ----------
+
+FFAIRLINES
+-------  --  ----
+cust33   DL   524
+cust0    AA    82
+cust109  AA    59
+cust4    SW  1148
+cust4    AA   175
+-------  --  ----
+
+Removing SW as cust4 ff airline
+After Removing SW as ff airline it should still be AA for frequentflieron
+
+CUSTOMERS
+-------  -----------------  ----------  --
+cust0    Anthony Allen      1985-05-14  AA
+cust33   Christopher Davis  1984-05-13  DL
+cust109  James Adams        1994-05-22  AA
+cust4    Tony Gonzalez      1977-10-06  AA
+-------  -----------------  ----------  --
+
+NEWCUSTOMERS
+-------  -----------------  ----------
+cust0    Anthony Allen      1985-05-14
+cust33   Christopher Davis  1984-05-13
+cust109  James Adams        1994-05-22
+cust4    Tony Gonzalez      1977-10-06
+-------  -----------------  ----------
+
+FFAIRLINES
+-------  --  ---
+cust33   DL  524
+cust0    AA   82
+cust109  AA   59
+cust4    AA  175
+-------  --  ---
+
+Removing AA as cust4 ffairline
+After Removing AA as ffairline.  Now it should be null because cust4 has no entries in fffairlines
+
+CUSTOMERS
+-------  -----------------  ----------  --
+cust0    Anthony Allen      1985-05-14  AA
+cust33   Christopher Davis  1984-05-13  DL
+cust109  James Adams        1994-05-22  AA
+cust4    Tony Gonzalez      1977-10-06
+-------  -----------------  ----------  --
+
+NEWCUSTOMERS
+-------  -----------------  ----------
+cust0    Anthony Allen      1985-05-14
+cust33   Christopher Davis  1984-05-13
+cust109  James Adams        1994-05-22
+cust4    Tony Gonzalez      1977-10-06
+-------  -----------------  ----------
+
+FFAIRLINES
+-------  --  ---
+cust33   DL  524
+cust0    AA   82
+cust109  AA   59
+-------  --  ---
+
+------------------- CONTINUING WITH OPERATIONS ON FLEWON -------------------
+Adding both UA and AA as ff airlines for cust4
+Initial state. NOTE: cust4 has 2 fffairlines.  The frequentflieron airline should be UA.
+
+CUSTOMERS
+-------  -----------------  ----------  --
+cust0    Anthony Allen      1985-05-14  AA
+cust33   Christopher Davis  1984-05-13  DL
+cust109  James Adams        1994-05-22  AA
+cust4    Tony Gonzalez      1977-10-06  UA
+-------  -----------------  ----------  --
+
+NEWCUSTOMERS
+-------  -----------------  ----------
+cust0    Anthony Allen      1985-05-14
+cust33   Christopher Davis  1984-05-13
+cust109  James Adams        1994-05-22
+cust4    Tony Gonzalez      1977-10-06
+-------  -----------------  ----------
+
+FFAIRLINES
+-------  --  ---
+cust33   DL  524
+cust0    AA   82
+cust109  AA   59
+cust4    UA  372
+cust4    AA  175
+-------  --  ---
+
+Now removing a recent UA flight in flewon for cust 4
+Deleted recent UA flight and cust 4 has recently flown AA
+
+CUSTOMERS
+-------  -----------------  ----------  --
+cust0    Anthony Allen      1985-05-14  AA
+cust33   Christopher Davis  1984-05-13  DL
+cust109  James Adams        1994-05-22  AA
+cust4    Tony Gonzalez      1977-10-06  AA
+-------  -----------------  ----------  --
+
+NEWCUSTOMERS
+-------  -----------------  ----------
+cust0    Anthony Allen      1985-05-14
+cust33   Christopher Davis  1984-05-13
+cust109  James Adams        1994-05-22
+cust4    Tony Gonzalez      1977-10-06
+-------  -----------------  ----------
+
+FFAIRLINES
+-------  --  ---
+cust33   DL  524
+cust0    AA   82
+cust109  AA   59
+cust4    AA  175
+cust4    UA  129
+-------  --  ---
+
+Updating an AA flight to be SW instead
+After the update cust4 has flown recent on UA than AA.
+
+CUSTOMERS
+-------  -----------------  ----------  --
+cust0    Anthony Allen      1985-05-14  AA
+cust33   Christopher Davis  1984-05-13  DL
+cust109  James Adams        1994-05-22  AA
+cust4    Tony Gonzalez      1977-10-06  UA
+-------  -----------------  ----------  --
+
+NEWCUSTOMERS
+-------  -----------------  ----------
+cust0    Anthony Allen      1985-05-14
+cust33   Christopher Davis  1984-05-13
+cust109  James Adams        1994-05-22
+cust4    Tony Gonzalez      1977-10-06
+-------  -----------------  ----------
+
+FFAIRLINES
+-------  --  ---
+cust33   DL  524
+cust0    AA   82
+cust109  AA   59
+cust4    UA  129
+cust4    AA    0
+-------  --  ---
+
+Inserting ('UA101', 'cust4', to_date('2016-08-01', 'YYYY-MM-DD')) into flewon
+After the insert UA is still the most recent flight.
+
+CUSTOMERS
+-------  -----------------  ----------  --
+cust0    Anthony Allen      1985-05-14  AA
+cust33   Christopher Davis  1984-05-13  DL
+cust109  James Adams        1994-05-22  AA
+cust4    Tony Gonzalez      1977-10-06  UA
+-------  -----------------  ----------  --
+
+NEWCUSTOMERS
+-------  -----------------  ----------
+cust0    Anthony Allen      1985-05-14
+cust33   Christopher Davis  1984-05-13
+cust109  James Adams        1994-05-22
+cust4    Tony Gonzalez      1977-10-06
+-------  -----------------  ----------
+
+FFAIRLINES
+-------  --  ---
+cust33   DL  524
+cust0    AA   82
+cust109  AA   59
+cust4    AA    0
+cust4    UA  258
+-------  --  ---
+
