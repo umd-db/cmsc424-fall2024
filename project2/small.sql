@@ -1040,6 +1040,8 @@ DROP VIEW IF EXISTS flights_airports;
 
 DROP VIEW IF EXISTS flights_JFK;
 
+DROP VIEW IF EXISTS flewon_cust7;
+
 CREATE VIEW flights_airports AS
  	(SELECT flights.airlineid,
     	flights.flightid,
@@ -1052,8 +1054,14 @@ CREATE VIEW flights_airports AS
    		FROM flights
 );
 
-CREATE VIEW flights_JFK as 
-	(SELECT flights.flightid
-   		FROM flights
+CREATE VIEW flights_JFK AS (
+	SELECT flights.flightid
+   	FROM flights
   	WHERE flights.source = 'JFK' OR flights.dest = 'JFK'
+);
+
+CREATE VIEW flewon_cust7 AS (
+	SELECT *
+	FROM flewon
+	WHERE customerid = 'cust7'
 );
