@@ -55,6 +55,8 @@ GROUP BY flightid
 ORDER BY flightid;
 ```
 
+HINT: We have created a view named `flewon_cust7` that lists all the flights cust7 flew on. You don't need to create this view, we have already populated it in the database. You could use this view for the query.
+
 Your job is to fill in `<answer1>` and `<answer2>` under the following constraints:
 1. `<answer1>` cannot be a nested query! (i.e. you cannot have the words SELECT or FROM as part of this answer). 
 1. `<answer2>` consists of 6 words, of which two are OUTER JOIN, two are the two tables being joined, and the remaining two can only contain letters a-z (e.g. no punctuation marks or parentheses).
