@@ -93,7 +93,7 @@ Your query **must** keep the same FROM clause as the above query. However, you n
 
 **Q3 (8pt)**. An airline is said to operate out of an airport (with airportid) if it has at least one flight when either its source or dest as the given airportid. We will try to write a query using outer joins to find all the airlines that satisfy the following conditions  
 
-  1. Operate out of at least 15 airports, and
+  1. Operate at least 15 flights (across airports), and
   1. Do not operate out of JFK.
 
 You don't need to check if the airline has flown out of the airport, just check that it operates out of it. (i.e, you don't need to check the `flewon` table).
