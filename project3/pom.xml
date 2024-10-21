@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>edu.umd.cs424</groupId>
+    <artifactId>database</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>5.11.2</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.vintage</groupId>
+            <artifactId>junit-vintage-engine</artifactId>
+            <version>5.11.2</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <HW></HW>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.5.1</version>
+                <configuration>
+		    <includes>
+		        <include>**/Test*.java</include>
+		    </includes>
+                    <excludes>
+                        <exclude>**/TestUtils.java</exclude>
+                        <exclude>**/TestSourceOperator.java</exclude>
+                    </excludes>
+                    <trimStackTrace>false</trimStackTrace>
+                    <argLine> -Xms16m -Xmx16m -Djunit.jupiter.execution.timeout.mode=disabled_on_debug </argLine>
+                    <properties>
+                        <configurationParameters>
+                            junit.jupiter.execution.timeout.default = 1000 ms
+                            <!-- FileChannel::map gives a segment of memory that is very hard to free manually.
+                                 It will persist in memory and prevent the temporary folder from being deleted,
+                                 resulting in a failed test. -->
+                            junit.jupiter.tempdir.cleanup.mode.default = NEVER
+                        </configurationParameters>
+                    </properties><!--ADD TEST JVM ARGS HERE i.e '-Xms8m -Xmx8m' to limit memory to 8m -->
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
