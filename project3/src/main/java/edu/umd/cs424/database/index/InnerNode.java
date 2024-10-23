@@ -35,8 +35,8 @@ class InnerNode extends BPlusNode {
     // LeafNode.keys and LeafNode.rids in LeafNode.java for a warning on the
     // difference between the keys and children here versus the keys and children
     // stored on disk.
-    private final List<DataBox> keys;
-    private final List<Integer> children;
+    private List<DataBox> keys;
+    private List<Integer> children;
 
     // Constructors //////////////////////////////////////////////////////////////
     /**
