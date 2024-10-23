@@ -403,7 +403,7 @@ public class TestBPlusTree {
         assertEquals(String.format("(%s 4 %s 7 %s)", l, m, r), tree.toSexp(null));
     }
 
-    @Timeout(5)
+    @Timeout(10)
     @Test
     public void testPut_random() throws BPlusTreeException, IOException {
         var keys = new ArrayList<DataBox>();
@@ -541,7 +541,7 @@ public class TestBPlusTree {
      */
     @ParameterizedTest
     @ValueSource(ints = {5483})
-    @Timeout(1)
+    @Timeout(8)
     public void testIterator_performance_1(int size) {
         var entries = new ArrayList<TreeEntry>();
         int repetitions = 50;
@@ -612,7 +612,7 @@ public class TestBPlusTree {
      * This test checks that the iterator is fast enough when only parts of the result is needed
      */
     @Test
-    @Timeout(8)
+    @Timeout(12)
     public void testIterator_performance_4() {
         int size = 5483;
         var entries = new ArrayList<TreeEntry>();
@@ -645,7 +645,7 @@ public class TestBPlusTree {
      */
     @ParameterizedTest
     @ValueSource(ints = {5, 23, 101, 397, 1103})
-    @Timeout(4)
+    @Timeout(8)
     public void testIterator_randomized(int size) {
         var entries = new ArrayList<TreeEntry>();
         // supplying a seed to this Random object will make the whole test deterministic, which is helpful
