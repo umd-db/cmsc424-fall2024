@@ -138,5 +138,6 @@ Just submit the following files to Gradescope.
 ├── BNLJOperator.java
 ├── BNLJOptimizedOperator.java
 ├── SortMergeOperator.java
-└── SortOperator.java
+├── SortOperator.java
+└── HashJoinOperator.java
 ```
