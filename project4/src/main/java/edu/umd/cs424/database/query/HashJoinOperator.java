@@ -116,7 +116,7 @@ public class HashJoinOperator extends JoinOperator {
         // Create a hash function.
         int seed = random.nextInt();
         Function<Integer, Integer> hashFunction = x -> this.hashBiFunction.apply(seed, x);
-        // Break
+        // Break the two lists into multiple lists/runs
         var runsLeft = createRuns(recordList1, hashFunction, true);
         var runsRight = createRuns(recordList2, hashFunction, false);
         /*
