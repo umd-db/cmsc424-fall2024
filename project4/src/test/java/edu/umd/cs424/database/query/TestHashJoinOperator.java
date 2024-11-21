@@ -48,23 +48,23 @@ public class TestHashJoinOperator {
 
     @Test
     @Category(PublicTests.class)
-    public void testSortRandomOrder_randomSmall() throws QueryPlanException, DatabaseException, IOException {
-        testSortRandomOrder(5, 10, 5);
+    public void testHashJoin_randomSmall() throws QueryPlanException, DatabaseException {
+        testHashJoin(5, 10, 5);
     }
 
     @Test
     @Category(PublicTests.class)
-    public void testSortRandomOrder_randomMedium() throws QueryPlanException, DatabaseException, IOException {
-        testSortRandomOrder(107, 20, 3);
+    public void testHashJoin_randomMedium() throws QueryPlanException, DatabaseException {
+        testHashJoin(107, 20, 3);
     }
 
     @Test
     @Category(PublicTests.class)
-    public void testSortRandomOrder_randomLarge() throws QueryPlanException, DatabaseException, IOException {
-        testSortRandomOrder(503, 10, 5);
+    public void testHashJoin_randomLarge() throws QueryPlanException, DatabaseException {
+        testHashJoin(503, 10, 5);
     }
 
-    private void testSortRandomOrder(int size, int bucketSizeLimit, int numSubRuns) throws DatabaseException, QueryPlanException {
+    private void testHashJoin(int size, int bucketSizeLimit, int numSubRuns) throws DatabaseException, QueryPlanException {
         var transaction = newTransaction();
         var schema = TestUtils.createSchemaWithAllTypes();
         String left = "left", right = "right";

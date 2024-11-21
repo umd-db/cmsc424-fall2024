@@ -121,10 +121,6 @@ public class BNLJOptimizedOperator extends JoinOperator {
         /**
          * Returns the next record that should be yielded from this join,
          * or null if there are no more records to join.
-         *
-         * You may find JoinOperator#compare useful here. (You can call compare
-         * function directly from this file, since BNLJOperator is a subclass
-         * of JoinOperator).
          */
         private Record fetchNextRecord() throws DatabaseException {
             throw new UnsupportedOperationException("Implement this.");
